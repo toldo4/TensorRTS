@@ -15,7 +15,7 @@ class toldo_bot(Agent):
     def __init__(self, init_observation : Observation, action_space : Dict[ActionName, ActionSpace]) -> None: 
         super().__init__(init_observation, action_space)
         checkpoint = load_checkpoint("bots/toldo_bot/checkpoint")
-        self.current = RogueNetAgent(checkpoint.state.agent)
+        self.agent = RogueNetAgent(checkpoint.state.agent)
 
     def take_turn(self, current_game_state: Observation) -> Mapping[ActionName, Action]:
         if self.is_player_one:
@@ -51,7 +51,6 @@ class toldo_bot(Agent):
 
             action, predicted_return = self.agent.act(opp_obs)
             return action
-
 
     def on_game_start(self, is_player_one : bool, is_player_two : bool) -> None:
         return super().on_game_start(is_player_one, is_player_two)

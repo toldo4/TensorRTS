@@ -1,1 +1,5 @@
 Results.txt
+runs
+wandb
+checkpoints_old
+checkpoints

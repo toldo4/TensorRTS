@@ -1,5 +1,5 @@
 Config(
-    total_timesteps: 60000,
+    total_timesteps: 100000,
     rollout: (
         steps: 32,
         num_envs: 64,
@@ -9,4 +9,7 @@ Config(
         bs: 512,
         lr: 0.005,
     ),
+    track: true,
+    wandb_project_name: "pa4-enn",
+    wandb_entity: "mr132816",
 )
